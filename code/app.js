@@ -1,4 +1,7 @@
-require('dotenv').config();
+const path = require('path');
+const dotenv = require('dotenv');
+dotenv.config();
+dotenv.config({ path: path.join(__dirname, '.public.env') });
 
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
