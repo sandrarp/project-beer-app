@@ -24,10 +24,9 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", (req, res, next) => {
-  const username = req.body.username;
-  const password = req.body.password;
-  if (username === "" || password === "") {
-    res.render("auth/signup", { message: "Indicate username and password" });
+  const { email, name, username, password } = req.body;
+  if (email === "" || username === "" || password === "") {
+    res.render("auth/signup", { message: "Indicate email, username and password" });
     return;
   }
 
@@ -41,6 +40,8 @@ router.post("/signup", (req, res, next) => {
     const hashPass = bcrypt.hashSync(password, salt);
 
     const newUser = new User({
+      email,
+      name,
       username,
       password: hashPass
     });
