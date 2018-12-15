@@ -1,8 +1,48 @@
+@import 'default-style';
+@import 'variables';
+@import 'forms';
+@import 'homepage';
+
+
 body {
-  padding: 50px;
+  color: $birra-dark-grey;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family:'Avenir Next W01';
 }
 
 a {
   color: #00B7FF;
+}
+
+
+.bg-birra-primary {
+  background-color: $birra-primary;
+}
+.bg-birra-white {
+  background-color: $birra-ecru-white;
+}
+
+.quote-container {
+  .quote-title {
+    font-size: 3.928em;
+    font-weight: 700;
+    line-height: 1em;
+  }
+  .quote-subtitle {
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+  .quote-content {
+    font-size: 1.357em;
+  }
+  .quote-description, .quote-sinonyms, .quote-expression {
+    font-size: 1em;
+    line-height: 1.45em;
+    margin-bottom: 0.7em;
+  }
+  .quote-expression {
+    color: $birra-light-grey;
+  }
 }

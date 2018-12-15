@@ -1,0 +1,21 @@
+.quote-container {
+  max-width: 500px;
+  div > * {
+    display: block;
+  }
+}
+
+.forms-container {
+  width: 300px;
+  .card, .card-header {
+    border-radius: 0;
+    border: none;
+  }
+  .card-header {
+    background: none;
+  }
+  .btn {
+    outline: 0;
+    box-shadow: none!important;
+  }
+}
