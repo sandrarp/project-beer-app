@@ -1,13 +1,13 @@
 const path = require('path');
 const dotenv = require('dotenv');
 dotenv.config();
-dotenv.config({ path: path.join(__dirname, '.public.env') });
+dotenv.config({ path: path.join(__dirname, '../.public.env') });
 
 const mongoose = require("mongoose");
 const Beer = require("../models/Beer");
 
 mongoose
-  .connect(`mongodb://localhost/BEER-APP`, { useNewUrlParser: true })
+  .connect(`${process.env.DBURL}`, { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })

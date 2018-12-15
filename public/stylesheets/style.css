@@ -175,6 +175,112 @@
   height: 100%;
   overflow: hidden; }
 
+.material-form .form-light input {
+  border-color: white;
+  color: white; }
+
+.material-form .form-dark input {
+  border-color: #4A4A4A;
+  color: #4A4A4A; }
+
+.material-form label {
+  position: absolute;
+  padding: 8px 0; }
+
+.material-form input {
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 8px 0; }
+
+.material-form-2 {
+  /* form starting stylings ------------------------------- */
+  /* LABEL ======================================= */
+  /* active state */
+  /* BOTTOM BARS ================================= */
+  /* active state */
+  /* HIGHLIGHTER ================================== */
+  /* active state */
+  /* ANIMATIONS ================ */ }
+  .material-form-2 .group {
+    position: relative;
+    margin-bottom: 45px; }
+  .material-form-2 input {
+    padding: 10px 10px 10px 5px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #757575;
+    background: none; }
+  .material-form-2 input:focus {
+    outline: none; }
+  .material-form-2 label {
+    color: #4A4A4A;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all; }
+  .material-form-2 input:focus ~ label, .material-form-2 input:valid ~ label {
+    top: -20px;
+    color: #9E6A16; }
+  .material-form-2 .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+    top: 1px; }
+  .material-form-2 .bar:before, .material-form-2 .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #4A4A4A;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all; }
+  .material-form-2 .bar:before {
+    left: 50%; }
+  .material-form-2 .bar:after {
+    right: 50%; }
+  .material-form-2 input:focus ~ .bar:before, .material-form-2 input:focus ~ .bar:after {
+    width: 50%; }
+  .material-form-2 .highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5; }
+  .material-form-2 input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease; }
+
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264AE; }
+  to {
+    width: 0;
+    background: transparent; } }
+
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264AE; }
+  to {
+    width: 0;
+    background: transparent; } }
+
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE; }
+  to {
+    width: 0;
+    background: transparent; } }
+
 .quote-container {
   max-width: 500px; }
   .quote-container div > * {
