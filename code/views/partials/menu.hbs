@@ -1,10 +1,19 @@
-  <nav>
-    <a href="/">Home</a>
-
-    {{#if user}}
-    <a href="/auth/logout">Logout</a>
-    {{else}}
-    <a href="/auth/login">Login</a>
-    <a href="/auth/signup">Signup</a>
-    {{/if}}
-  </nav>
+<nav class="navbar navbar-light">
+  <a class="navbar-brand" href="/">
+    <img src="/images/logo_birra_sm.png" height="25" class="d-inline-block align-top" alt="">
+  </a>
+  <ul class="nav-links">
+    <li class="list-inline-item"><a href="/profile/beers/add">Añadir cerveza</a></li>
+    <li class="list-inline-item"><a href="/discover">Descubre!</a></li>
+    <li class="list-inline-item"><a href=""></a></li>
+    <li class="list-inline-item"><a href=""></a></li>
+  </ul>
+  {{#if user}}
+    <div class="nav-user">
+      <span>{{user.name}}</span>
+      <a href=""><img src="{{user.image}}" alt="" height="30"></a>
+      <a href="/logout">Cerrar sesión</a>
+    </div>
+  {{/if}}
+  
+</nav>
