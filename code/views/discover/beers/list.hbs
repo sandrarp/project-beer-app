@@ -1,0 +1,22 @@
+<a href="/discover">Descubre</a> / <a href="/discover/beers">Cervezas</a>
+<h1>Descubre cervezas</h1>
+<div class="row">
+  {{#each beers}}
+  <div class="col-2">
+    <a href="/discover/beers/{{id}}">
+      <img src="{{image}}" alt="" height="200">
+      <h3>{{name}}</h3>
+    </a>
+    <p>{{description}}</p>
+    <p>{{vol}} | {{kcal}}</p>
+    <p>{{beertype}}</p>
+    <p>{{brewery}}</p>
+    <p>{{brewery.city}}, {{brewery.country}}</p>
+    <div class="buttons">
+      <a href="/profile/beers/drunk/add/{{id}}">Probada!</a>
+      <a href="/profile/beers/fav/add/{{id}}">Favorita!</a>
+      <a href="/profile/beers/pendant/add/{{id}}">Pendiente!</a>
+    </div>
+  </div>
+  {{/each}}
+</div>

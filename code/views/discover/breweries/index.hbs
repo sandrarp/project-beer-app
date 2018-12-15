@@ -1,0 +1,26 @@
+{{#with brewery}}
+<h1>{{name}}</h1>
+<a href="/discover">Descubre</a> / <a href="/discover/breweries">Fábricas</a> / {{name}}
+<div class="row">
+  <div class="col-2">
+    <img src="{{image}}" alt="" width="200">
+    <h3>{{name}}</h3>
+    <p>{{description}}</p>
+    <p>{{vol}} | {{kcal}}</p>
+    <p>{{beertype}}</p>
+    <p>{{name}}</p>
+    <p>{{city}}, {{country}}</p>
+  </div>
+</div>
+  {{/with}}
+
+<h2>Cervezas de {{brewery.name}}:</h2>
+  <ul>
+    {{#each beers}}
+    <li><a href="/discover/beers/{{id}}">{{name}}</a></li>
+    {{/each}}
+  </ul>
+
+<div class="row">
+  
+</div>

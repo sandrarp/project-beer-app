@@ -1,2 +1,45 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+  <div class="row">
+    <div class="col-sm">
+      <div class="quote-container m-auto">
+        <h2 class="quote-title">cerveza</h2>
+        <span class="quote-subtitle"><i>nombre femenino</i></span>
+        <div class="quote-content pl-5">
+          <p class="quote-description">Bebida alcohólica de sabor amargo y color amarillento, más o menos oscuro, que se obtiene por fermentación de la cebada y se aromatiza con lúpulo: cerveza de barril; una jarra de cerveza; la cerveza también se comercializa sin alcohol.</p>
+          <span class="quote-sinonyms"><b>Sinónimos:</b> birra.</span>
+          <span class="quote-expression"><i>“Unas aceitunas y una birra”</i></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm col-sm-auto">
+      <div class="accordion forms-container" id="accordionExample">
+      <div class="card signup-form-container bg-birra-white">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="bg-transparent border-0 btn btn-light" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              CREA TU CUENTA
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            {{> signupForm}}
+          </div>
+        </div>
+      </div>
+      <div class="card login-form-container bg-birra-primary ml-4">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="bg-transparent border-0 btn btn-dark collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              INICIA SESIÓN
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            {{> loginForm}}
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
