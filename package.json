@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "dev": "DEBUG=code:* nodemon -e js,hbs ./bin/www",
     "dev-windows": "nodemon ./bin/www",
-    "beers": "node bin/beerSeeds.js"
+    "beers": "node bin/bbSeeds.js"
   },
   "dependencies": {
     "bcrypt": "^3.0.0",
