@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .error-message {
   position: fixed;
   top: 0;
@@ -296,6 +297,23 @@
   .forms-container .btn {
     outline: 0;
     box-shadow: none !important; }
+
+.rel-button:not([data-rel=""]) {
+  background: blue;
+  color: white; }
+
+.beer-row {
+  border-bottom: 3px solid #4A4A4A; }
+
+.cpt_rel img {
+  width: 100%; }
+
+.cpt_rel .rel_type  {
+  text-transform: capitalize; }
+
+article h1 {
+  font-size: 18px;
+  font-weight: bold; }
 
 body {
   color: #4A4A4A;

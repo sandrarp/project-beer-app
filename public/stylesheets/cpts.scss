@@ -1,0 +1,24 @@
+.rel-button:not([data-rel=""]) {
+ background: blue;
+ color: white;
+}
+
+.beer-row {
+  border-bottom: 3px solid $birra-dark-grey;
+}
+
+.cpt_rel {
+  img {
+    width: 100%;
+  }
+  .rel_type {
+    text-transform: capitalize;
+  }
+}
+
+article {
+  h1 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

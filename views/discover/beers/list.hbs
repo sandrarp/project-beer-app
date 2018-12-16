@@ -13,9 +13,9 @@
     <p>{{brewery}}</p>
     <p>{{brewery.city}}, {{brewery.country}}</p>
     <div class="buttons">
-      <a href="/profile/beers/drunk/add/{{id}}">Probada!</a>
-      <a href="/profile/beers/fav/add/{{id}}">Favorita!</a>
-      <a href="/profile/beers/pendant/add/{{id}}">Pendiente!</a>
+      <a href="/profile/beers/rel/{{id}}?type=tested" class="btn btn-block btn-outline-primary rel-button" data-rel="">Probada!</a>
+      <a href="/profile/beers/rel/{{id}}?type=favourite" class="btn btn-block btn-outline-primary rel-button" data-rel="123">Favorita!</a>
+      <a href="/profile/beers/rel/{{id}}?type=pendant" class="btn btn-block btn-outline-primary rel-button" data-rel="">Pendiente!</a>
     </div>
   </div>
   {{/each}}
