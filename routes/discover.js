@@ -2,6 +2,8 @@ const express = require("express");
 const discoveryRouter = express.Router();
 const Brewery = require('../models/Brewery');
 const Beer = require('../models/Beer');
+const RelUserBeer = require('../models/RelUserBeer');
+const _ = require("lodash");
 
 discoveryRouter.get("/", (req, res, next) => {
     res.render('discover');
@@ -27,11 +29,30 @@ discoveryRouter.get("/breweries/:id", (req, res, next) => {
 })
 
 discoveryRouter.get("/beers", (req, res, next) => {
+  let user_id = req.user.id;
   Beer.find()
-  .populate('brewery', 'id name city country')
+  .populate('brewery', 'id name city country image')
   .then(beers => {
-    res.render('discover/beers/list', {beers});
-    console.log(beers);
+    return Promise.all(
+    beers.forEach(beer => {
+      let relations = [];
+        RelUserBeer.find({ user_id, beer_id:beer._id}, 'rel_type')
+        .then(rels => {
+          console.log(`${beer.name} tiene ${rels.length} relaciones`);
+          rels.forEach(rel => {
+            relations.push(rel.rel_type);
+          })
+        })
+        return {
+          ...beer,
+          rels: relations,
+        }
+      })
+    )
+  })
+  .then(beers => {
+      console.log(beers);
+      res.render('discover/beers/list', {beers});
   })
 })
 
