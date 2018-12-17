@@ -9,11 +9,12 @@ const beerSchema = new Schema({
   vol: String,
   kcal: String,
   ingredients: Array,
-  beertype: String, // Rubia, Tostada, Roja, Negra
+  beertype: {type: String}, // 
   fermentation: String, // Lager, IPA, Pale Ale, Triple Fermentación (FERMENTACIÓN)
   taste: String, // dulce, amarga, afrutada, citrica
   maridaje: Array, // si o no?
   isGlutenFree: {type: Boolean, default: false},
+  EBU: Number,
   isSeasonal: {type: Boolean, default: false}, // es de temporada? Significa que las pueden retirar
   verified: {type: Boolean, default: false}
 }, {

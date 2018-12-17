@@ -4,7 +4,7 @@ const Schema   = mongoose.Schema;
 const relUserBeerSchema = new Schema({
   user_id: {type: Schema.Types.ObjectId, ref:'User'},
   beer_id: {type: Schema.Types.ObjectId, ref:'Beer'},
-  rel_type: {type: String, enum: ["favourite", "recomended", "tested", "pendant"], default: "tested"},
+  rel_type: {type: String, num: ["favourite", "recomended", "tested", "pendant"], default: "tested"},
   valoration: {type: Number},
   note: String,
 }, {
