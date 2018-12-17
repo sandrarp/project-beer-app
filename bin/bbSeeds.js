@@ -18,7 +18,10 @@ mongoose
     console.error('Error connecting to mongo', err)
   });
 
-Brewery.deleteMany()
+Beer.deleteMany()
+.then(() => {
+  Brewery.deleteMany()
+})
 .then(() => {
   return Brewery.create(breweries).then(brs=> {
     console.log(`${brs.length} breweries created with the following id:`);
