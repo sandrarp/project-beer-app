@@ -1,0 +1,88 @@
+<div class="container">
+  <h1 class="text-center">Nueva cerveza</h1>
+  <div class="row justify-content-center">
+    <div class="col-11 col-md-4 card p-4" style="">
+      <div class="alert alert-info mb-4 text-center" role="alert">
+        <i class="fas fa-beer"></i> {{beers.length}}
+      </div>
+      <div class="alert alert-warning mb-4 text-center" role="alert">
+        Por favor, comprueba primero las cervezas que hay para no repetir.
+        <a href="#" class="btn btn-block btn-warning text-white mt-3 mb-3" data-toggle="modal" data-target="#exampleModal">
+          Ver lista de cervezas
+        </a>
+        Gracias por colaborar! :)
+      </div>
+      <form method="POST">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Escribe un nombre">
+        </div>
+        <div class="form-group">
+          <label for="brewery">Pertenece a la marca:</label>
+          <select name="brewery" class="form-control" id="brewery">
+            <option>Elige una</option>
+            {{#each breweries}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="vol">Vol %</label>
+          <input name="vol" type="text" class="form-control" id="vol" placeholder="Ej: 5,5%">
+        </div>
+        <div class="form-group">
+          <label for="beertype">Tipo (ej: Lager, Helles Bock, IPA, Triple...)</label>
+          <input name="beertype" type="text" class="form-control" id="beertype" placeholder="Escribe un tipo">
+        </div>
+        <div class="form-group">
+          <label for="color">Color</label>
+          <select name="color" class="form-control" id="color">
+            <option>Elige uno</option>
+            <option value="Rubia">Rubia</option>
+            <option value="Tostada">Tostada</option>
+            <option value="Roja">Roja</option>
+            <option value="Negra">Negra</option>
+          </select>
+        </div>
+        <div class="form-check">
+          <input name="isSeasonal" class="form-check-input" type="checkbox" value="true" id="isSeasonal">
+          <label class="form-check-label" for="isSeasonal">
+            Es de temporada
+          </label>
+        </div>
+        <div class="form-check mt-1">
+          <input name="isGlutenFree" class="form-check-input" type="checkbox" value="true" id="isGlutenFree">
+          <label class="form-check-label" for="isGlutenFree">
+            Sin gluten
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mt-4">Añadir cerveza</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cervezas ({{beers.length}})</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          {{#each beers}}
+            <li>{{name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

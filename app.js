@@ -97,5 +97,8 @@ app.use('/profile', relationRoutes);
 const discoverRoutes = require('./routes/discover');
 app.use('/discover', discoverRoutes);
 
+const adminRoutes = require('./routes/admin');
+app.use('/admin', adminRoutes);
+
 
 module.exports = app;

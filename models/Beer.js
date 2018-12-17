@@ -11,6 +11,7 @@ const beerSchema = new Schema({
   ingredients: Array,
   beertype: {type: String}, // 
   fermentation: String, // Lager, IPA, Pale Ale, Triple Fermentación (FERMENTACIÓN)
+  color: String,
   taste: String, // dulce, amarga, afrutada, citrica
   maridaje: Array, // si o no?
   isGlutenFree: {type: Boolean, default: false},
