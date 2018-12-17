@@ -91,6 +91,9 @@ app.use('/auth', authRoutes);
 const profileRoutes = require('./routes/profile');
 app.use('/profile', profileRoutes);
 
+const relationRoutes = require('./routes/relations');
+app.use('/profile', relationRoutes);
+
 const discoverRoutes = require('./routes/discover');
 app.use('/discover', discoverRoutes);
 
