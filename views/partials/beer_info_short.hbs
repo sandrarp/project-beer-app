@@ -1,0 +1,20 @@
+<article class="card beer-card {{orientation}}">
+  <div class="card-header">  
+    <a href="/discover/beers/{{id}}">
+      <img src="{{image}}" alt="" height="200">
+      <h1 class="beer-title">{{name}}</h1>
+      <p class="meta-brewery meta-text-c"><img src="{{brewery.image}}" height="15" alt=""> <a href="/discover/breweries/{{brewery.id}}">{{brewery.name}}</a></p>
+    </a>
+  </div>
+  <div class="card-body">
+    <p class="meta-beertype meta-text-a"><i>{{beertype}}</i></p>
+  <p class="meta-vol meta-text-b">{{vol}}</p>
+  </div>
+  <div class="card-footer buttons">
+    <div class="row justify-content-around">
+      <a href="/profile/beers/rel/{{id}}?type=tested" class="col-sm-3 btn btn-outline-primary rel-button" data-rel="" title="probada"><i class="fas fa-beer"></i></a>
+      <a href="/profile/beers/rel/{{id}}?type=favourite" class="col-sm-3 btn btn-outline-primary rel-button" data-rel="123" title="favorita"><i class="fas fa-heart"></i></a>
+      <a href="/profile/beers/rel/{{id}}?type=pendant" class="col-sm-3 btn btn-outline-primary rel-button" data-rel="" title="pendiente"><i class="fas fa-clock"></i></a>
+    </div>  
+  </div>
+</article>
