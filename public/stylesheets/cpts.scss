@@ -16,9 +16,30 @@
   }
 }
 
-article {
-  h1 {
+  article h1, .beer-title {
     font-size: 18px;
     font-weight: bold;
   }
-}
+
+  .meta-text-a {
+    font-style: italic;
+    color: $birra-primary;
+  }
+
+  .meta-text-b {
+    color: $birra-light-grey;
+  }
+
+  .meta-text-c {
+    font-size: 0.8em;
+  }
+
+  .beer-card {
+    &.portrait {
+
+    }
+    &.landscape {
+      
+    }
+  }
+

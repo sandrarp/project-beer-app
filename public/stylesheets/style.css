@@ -311,17 +311,28 @@
 .cpt_rel .rel_type  {
   text-transform: capitalize; }
 
-article h1 {
+article h1, .beer-title {
   font-size: 18px;
   font-weight: bold; }
 
+.meta-text-a {
+  font-style: italic;
+  color: #F5A623; }
+
+.meta-text-b {
+  color: #8A8A8A; }
+
+.meta-text-c {
+  font-size: 0.8em; }
+
 body {
   color: #4A4A4A;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-family: 'Avenir Next W01'; }
+  font: 14px 'Avenir Next W01', Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00B7FF; }
+  color: #303030; }
+  a:hover {
+    color: #000; }
 
 .bg-birra-primary {
   background-color: #F5A623; }
@@ -329,7 +340,7 @@ a {
 .bg-birra-white {
   background-color: #F7F7EB; }
 
-.quote-container .quote-title {
+.page-title, .quote-container .quote-title {
   font-size: 3.928em;
   font-weight: 700;
   line-height: 1em; }

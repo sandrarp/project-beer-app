@@ -7,12 +7,14 @@
 
 body {
   color: $birra-dark-grey;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-family:'Avenir Next W01';
+  font: 14px 'Avenir Next W01', Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: $birra-black;
+  &:hover {
+    color: #000;
+  }
 }
 
 
@@ -23,11 +25,15 @@ a {
   background-color: $birra-ecru-white;
 }
 
+.page-title {
+  font-size: 3.928em;
+  font-weight: 700;
+  line-height: 1em;
+}
+
 .quote-container {
   .quote-title {
-    font-size: 3.928em;
-    font-weight: 700;
-    line-height: 1em;
+    @extend .page-title;
   }
   .quote-subtitle {
     display: block;
