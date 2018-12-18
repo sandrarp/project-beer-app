@@ -3,7 +3,7 @@ const adminRouter = express.Router();
 const Brewery = require('../models/Brewery');
 const Beer = require('../models/Beer');
 const _ = require("lodash");
-const uploadCloud = require('../config/cloudinary.js');
+const uploadCloud = require('../config/cloudinary');
 
 
 adminRouter.get("/add/beer", (req, res, next) => {
@@ -15,9 +15,10 @@ adminRouter.get("/add/beer", (req, res, next) => {
   })
 })
 
-adminRouter.post("/add/beer", (req, res, next) => {
+adminRouter.post("/add/beer", uploadCloud.single('photo'), (req, res, next) => {
   const { name, brewery, vol, beertype, color, isSeasonal, isGlutenFree } = req.body; 
-  const newBeer = new Beer({ name, brewery, vol, beertype, color, isSeasonal, isGlutenFree });
+  const image = req.file.url;
+  const newBeer = new Beer({ name, brewery, vol, beertype, color, isSeasonal, isGlutenFree, image });
 
   newBeer.save()
   .then(() => {
@@ -37,7 +38,7 @@ adminRouter.get("/add/brewery", (req, res, next) => {
   })
 })
 
-adminRouter.post("/add/brewery", (req, res, next) => {
+adminRouter.post("/add/brewery", uploadCloud.single('photo'), (req, res, next) => {
   const { name, company, city, country, foundation_year } = req.body; 
   const image = req.file.url;
   const newBrewery = new Brewery({ name, company, city, country, foundation_year, image });

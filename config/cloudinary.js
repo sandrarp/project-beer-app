@@ -13,11 +13,15 @@ var storage = cloudinaryStorage({
   folder: 'breweries',
   allowedFormats: ['jpg', 'png'],
   transformation: [{ width: 800, height: 800, crop: "limit" }],
+  // filename: function (req, file, cb) {
+  //   let imgName = undefined;
+  //   cb(undefined, imgName);
+  // },
   filename: function (req, file, cb) {
-    let imgName = undefined;
-    cb(undefined, imgName);
+    cb(undefined, 'my-file-name')
   }
+
 });
 
-const uploadCloud = multer({ storage: storage }).single('file');
+const uploadCloud = multer({ storage: storage })
 module.exports = uploadCloud;
