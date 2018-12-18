@@ -2,25 +2,29 @@
 <h1 class="page-title">{{name}}</h1>
 <a href="/discover">Descubre</a> / <a href="/discover/breweries">Fábricas</a> / {{name}}
 <div class="row">
-  <div class="col-2">
+  <div class="col-12 col-sm-3">
     <img src="{{image}}" alt="" width="200">
+    <a href="#" class="btn btn-light" data-toggle="modal" data-target="#uploadImage">
+      Añadir/Editar imagen
+    </a>
+  </div>
+  <div class="col-12 col-sm-5">
     <h3>{{name}}</h3>
-    <p>{{description}}</p>
-    <p>{{vol}} | {{kcal}}</p>
-    <p>{{beertype}}</p>
-    <p>{{name}}</p>
-    <p>{{city}}, {{country}}</p>
+    <p><i class="fa fa-map-marker-alt"></i> {{city}}, {{country}}</p>
+    <p>Pertenece a la empresa <i>{{company}}</i></p>
+    <p>Fundada en {{foundation_year}}</p>
+    <div class="brewery-beers">
+      <h2>Cervezas de {{name}}:</h2>
+      {{/with}}
+      <ul>
+        {{#each beers}}
+        <li><a href="/discover/beers/{{id}}">{{name}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
   </div>
 </div>
-  {{/with}}
-
-<h2>Cervezas de {{brewery.name}}:</h2>
-  <ul>
-    {{#each beers}}
-    <li><a href="/discover/beers/{{id}}">{{name}}</a></li>
-    {{/each}}
-  </ul>
-
-<div class="row">
   
-</div>
+
+<!-- Modal -->
+{{> modal_edit_image brewery}}
