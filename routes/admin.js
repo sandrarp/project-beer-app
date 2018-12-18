@@ -3,6 +3,8 @@ const adminRouter = express.Router();
 const Brewery = require('../models/Brewery');
 const Beer = require('../models/Beer');
 const _ = require("lodash");
+const uploadCloud = require('../config/cloudinary.js');
+
 
 adminRouter.get("/add/beer", (req, res, next) => {
   Brewery.find().sort({name: 1})
@@ -37,7 +39,8 @@ adminRouter.get("/add/brewery", (req, res, next) => {
 
 adminRouter.post("/add/brewery", (req, res, next) => {
   const { name, company, city, country, foundation_year } = req.body; 
-  const newBrewery = new Brewery({ name, company, city, country, foundation_year });
+  const image = req.file.url;
+  const newBrewery = new Brewery({ name, company, city, country, foundation_year, image });
 
   newBrewery.save()
   .then(() => {

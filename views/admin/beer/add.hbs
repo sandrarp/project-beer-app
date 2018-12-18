@@ -11,8 +11,11 @@
           Ver lista de cervezas
         </a>
         Gracias por colaborar! :)
+        <br>
+        <br>
+        También puedes <a href="/admin/add/brewery">Añadir marcas</a>
       </div>
-      <form method="POST">
+      <form action="/admin/add/beer" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <label for="name">Nombre</label>
           <input type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Escribe un nombre">
@@ -43,6 +46,10 @@
             <option value="Roja">Roja</option>
             <option value="Negra">Negra</option>
           </select>
+        </div>
+        <div class="form-group">
+          <label for="beertype">Imagen</label>
+           <input type="file" name="photo">
         </div>
         <div class="form-check">
           <input name="isSeasonal" class="form-check-input" type="checkbox" value="true" id="isSeasonal">
