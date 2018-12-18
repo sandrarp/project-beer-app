@@ -13,6 +13,9 @@
 <body>
 
   {{> menu}}
+  {{#if message }}
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
   <div class="container-fluid p-0">
   {{{body}}}
   </div>

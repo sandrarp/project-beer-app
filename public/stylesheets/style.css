@@ -205,9 +205,9 @@
   /* ANIMATIONS ================ */ }
   .material-form-2 .group {
     position: relative;
-    margin-bottom: 45px; }
+    margin-bottom: 1em; }
   .material-form-2 input {
-    padding: 10px 10px 10px 5px;
+    padding: 8px 8px 8px 5px;
     display: block;
     border: none;
     border-bottom: 1px solid #757575;
@@ -225,7 +225,7 @@
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all; }
   .material-form-2 input:focus ~ label, .material-form-2 input:valid ~ label {
-    top: -20px;
+    top: -14px;
     color: #9E6A16; }
   .material-form-2 .bar {
     position: relative;

@@ -21,7 +21,7 @@
           </h5>
         </div>
 
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div id="collapseOne" class="collapse {{#if signup}}{{signup}}{{/if}}" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class="card-body">
             {{> signupForm}}
           </div>
@@ -30,12 +30,12 @@
       <div class="card login-form-container bg-birra-primary ml-4">
         <div class="card-header" id="headingTwo">
           <h5 class="mb-0">
-            <button class="bg-transparent border-0 btn btn-dark collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <button class="bg-transparent border-0 btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
               INICIA SESIÓN
             </button>
           </h5>
         </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div id="collapseTwo" class="collapse {{#if login}}{{login}}{{/if}}" aria-labelledby="headingTwo" data-parent="#accordionExample">
           <div class="card-body">
             {{> loginForm}}
           </div>

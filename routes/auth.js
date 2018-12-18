@@ -9,24 +9,24 @@ const bcryptSalt = 10;
 
 
 router.get("/login", (req, res, next) => {
-  res.render("auth/login", { "message": req.flash("error") });
+  res.render("index", { "message": req.flash("error"), login: "show" });
 });
 
 router.post("/login", passport.authenticate("local", {
   successRedirect: "/",
-  failureRedirect: "/auth/login",
+  failureRedirect: "/login",
   failureFlash: true,
   passReqToCallback: true
 }));
 
 router.get("/signup", (req, res, next) => {
-  res.render("auth/signup");
+  res.render("index", {signup: "show"});
 });
 
 router.post("/signup", (req, res, next) => {
   const { email, name, username, password } = req.body;
   if (email === "" || username === "" || password === "") {
-    res.render("auth/signup", { message: "Indicate email, username and password" });
+    res.render("index", { message: "Indicate email, username and password" , signup: "show"});
     return;
   }
 

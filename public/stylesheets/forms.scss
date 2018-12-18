@@ -209,10 +209,10 @@ $primary: #bb1515;
 /* form starting stylings ------------------------------- */
 .group { 
   position:relative; 
-  margin-bottom:45px; 
+  margin-bottom:1em; 
 }
 input {
-  padding:10px 10px 10px 5px;
+  padding:8px 8px 8px 5px;
   display:block;
   border:none;
   border-bottom:1px solid #757575;
@@ -235,7 +235,7 @@ label {
 
 /* active state */
 input:focus ~ label, input:valid ~ label {
-  top:-20px;
+  top:-14px;
   color:$birra-dark-brown;
 }
 
