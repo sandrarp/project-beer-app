@@ -5,7 +5,7 @@ const brewerySchema = new Schema({
   name: {type: String, required: true},
   description: String,
   company: String,
-  image: {type: String, default: 'https://res.cloudinary.com/duaxyo2ks/image/upload/v1543655128/tumblr-lab-file/profile-default.png'},
+  image: {type: String, default: 'https://res.cloudinary.com/duaxyo2ks/image/upload/c_scale,e_tint,w_800/v1545093184/breweries/cgrv56yhb64w3ygbb567.png'},
   foundation_year: Number,
   city: String,
   country: {type: String, required: true},

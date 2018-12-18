@@ -1,0 +1,75 @@
+<div class="container">
+  <h1 class="text-center">Nueva fábrica</h1>
+  <div class="row justify-content-center">
+    <div class="col-11 col-md-4 card p-4" style="">
+      <div class="alert alert-info mb-4 text-center" role="alert">
+        <i class="fas fa-industry"></i> {{breweries.length}}
+      </div>
+      <div class="alert alert-warning mb-4 text-center" role="alert">
+        Por favor, comprueba primero las fábricas que hay para no repetir.
+        <a href="#" class="btn btn-block btn-warning text-white mt-3 mb-3" data-toggle="modal" data-target="#exampleModal">
+          Ver lista de fábricas
+        </a>
+        Gracias por colaborar! :)
+      </div>
+      <form method="POST">
+        <div class="form-group">
+          <label for="name">Nombre de la fábrica:</label>
+          <input type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Escribe un nombre">
+        </div>
+        <div class="form-group">
+          <label for="company">Pertenece a la empresa:</label>
+          <input type="text" name="company" class="form-control" id="company" aria-describedby="companyHelp" placeholder="Escribe la empresa">
+          <small>Si no lo tienes claro, déjalo en blanco</small>
+        </div>
+        <div class="form-group">
+          <label for="country">Ciudad:</label>
+          <input type="text" name="city" class="form-control" id="city" aria-describedby="nameHelp" placeholder="Escribe un nombre">
+        </div>
+        <div class="form-group">
+          <label for="country">País:</label>
+          <input type="text" name="country" class="form-control" id="country" aria-describedby="nameHelp" placeholder="Escribe un nombre">
+        </div>
+        <div class="form-group">
+          <label for="foundation_year">Año de fundación:</label>
+          <input type="text" name="foundation_year" class="form-control" id="foundation_year" aria-describedby="nameHelp" placeholder="Ej: 1990">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mt-4">Añadir fábrica</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Fábricas ({{breweries.length}})</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{!-- <ol>
+          {{#each breweries}}
+            <li>{{name}}</li>
+          {{/each}}
+        </ol> --}}
+        <div class="row justify-content-center">
+          {{#each breweries}}
+          <div class="card col-3 m-2 p-0">
+            <img class="card-img-top" src="{{image}}" alt="Card image cap">
+            <div class="card-body p-0 pt-2 text-center">
+              <p class="card-title">{{name}}</p>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

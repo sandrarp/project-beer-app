@@ -15,15 +15,7 @@ adminRouter.get("/add/beer", (req, res, next) => {
 
 adminRouter.post("/add/beer", (req, res, next) => {
   const { name, brewery, vol, beertype, color, isSeasonal, isGlutenFree } = req.body; 
-  const newBeer = new Beer({
-    name,
-    brewery,
-    vol,
-    beertype,
-    color,
-    isSeasonal,
-    isGlutenFree
-  });
+  const newBeer = new Beer({ name, brewery, vol, beertype, color, isSeasonal, isGlutenFree });
 
   newBeer.save()
   .then(() => {
@@ -33,6 +25,28 @@ adminRouter.post("/add/beer", (req, res, next) => {
   .catch(err => {
     console.log(`Algo fue mal creando la cerveza`);
     res.render("admin/beer/add", { message: "Something went wrong" });
+  })
+})
+
+adminRouter.get("/add/brewery", (req, res, next) => {
+  Brewery.find().sort({name: 1})
+  .then(breweries => {
+    res.render('admin/brewery/add', {breweries});
+  })
+})
+
+adminRouter.post("/add/brewery", (req, res, next) => {
+  const { name, company, city, country, foundation_year } = req.body; 
+  const newBrewery = new Brewery({ name, company, city, country, foundation_year });
+
+  newBrewery.save()
+  .then(() => {
+    res.redirect("/admin/add/brewery");
+    console.log(`Nueva cerveza creada: ${newBrewery.name}`);
+  })
+  .catch(err => {
+    console.log(`Algo fue mal creando la fábrica`);
+    res.render("admin/brewery/add", { message: "Something went wrong" });
   })
 })
 
