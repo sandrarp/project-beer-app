@@ -17,11 +17,14 @@ body {
   min-height: 100vh; }
 
 .main-container {
-  flex: 1; }
+  flex: 1;
+  display: flex;
+  flex-direction: column; }
 
 .container-centered {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  flex: 1; }
 
 .fullscreen-form input,
 .fullscreen-form button {
@@ -337,6 +340,16 @@ article h1, .beer-title {
 .meta-text-c {
   font-size: 0.8em; }
 
+.beer-card .card-header {
+  border-bottom: 3px solid #000; }
+
+.title-2 {
+  font-size: 50px; }
+
+.title-3 {
+  font-size: 33px;
+  font-weight: 500; }
+
 body {
   color: #4A4A4A;
   font: 14px 'Avenir Next W01', Helvetica, Arial, sans-serif; }
@@ -355,7 +368,11 @@ a {
 .page-title, .quote-container .quote-title {
   font-size: 3.928em;
   font-weight: 700;
-  line-height: 1em; }
+  line-height: 1em;
+  margin-bottom: 1em; }
+
+.page-breadcrumb {
+  margin-bottom: 1em; }
 
 .quote-container .quote-subtitle {
   display: block;

@@ -1,14 +1,17 @@
 {{#with beer}}
-<a href="/discover">Descubre</a> / <a href="/discover/beers">Cervezas</a> / {{name}}
-<div class="row">
+<div class="PAGE-BREADCRUMB"><a href="/discover">Descubre</a> / <a href="/discover/beers">Cervezas</a> / {{name}}</div>
+<div class="row container-centered single">
   <div class="col-12 col-sm-3">
     <img src="{{image}}" alt="" width="200">
     <a href="#" class="btn btn-light" data-toggle="modal" data-target="#uploadImage">
       Añadir/Editar imagen
     </a>
   </div>
-  <div class="col-12 col-sm-5">
-    <h1 class="page-title">{{name}}</h1>
+  <div class="col">
+    <h1 class="page-title title-2">{{name}}</h1>
+    <p class="page-title title-2">{{vol}}</p>
+    <p class="title-3">{{beertype}}</p>
+    <p>{{kcal}}</p>
     <div class="meta-brewery">
       <p>Una cerveza de:</p>
       <a href="/discover/breweries/{{brewery.id}}">
@@ -17,8 +20,6 @@
         <p>{{brewery.city}}, {{brewery.country}}</p>
       </a>
     </div>
-    <p>{{beertype}}</p>
-    <p>{{vol}} | {{kcal}}</p>
     <p>{{description}}</p>
   </div>
   {{/with}}
