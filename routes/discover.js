@@ -19,7 +19,6 @@ discoveryRouter.get("/breweries/:id", (req, res, next) => {
   Brewery.findById(req.params.id)
   .then(brewery => {
     Beer.find({ brewery:req.params.id }).sort({name: 1}).then(beers => {
-      console.log(beers);
       res.render('discover/breweries', {
         brewery, 
         beers
@@ -29,7 +28,9 @@ discoveryRouter.get("/breweries/:id", (req, res, next) => {
 })
 
 discoveryRouter.get("/beers", (req, res, next) => {
-  let user_id = req.user.id;
+  if(req.user !== undefined) {
+    let user_id = req.user.id;
+  }
   Beer.find()
   .populate('brewery', 'id name city country image')
   .populate('relation', 'rel_type')
@@ -48,7 +49,6 @@ discoveryRouter.get("/beers", (req, res, next) => {
         }
       }
     })
-    console.log(newBeers)
     res.render('discover/beers/list', {beers:newBeers});
   });
 })

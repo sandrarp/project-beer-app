@@ -5,6 +5,10 @@ const Beer = require("../models/Beer");
 const _ = require("lodash");
 
 profileRouter.get('/', (req, res, next) => {
+  if(req.user === null || req.user === undefined) {
+    console.log(req.user);
+    res.redirect('/');  
+  }
   RelUserBeer.find({ user_id:req.user.id })
   .populate('beer_id', 'id name image city country')
   .then(rels => {

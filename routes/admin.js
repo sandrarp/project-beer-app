@@ -59,5 +59,43 @@ adminRouter.post("/add/brewery", uploadCloud.single('photo'), (req, res, next) =
   })
 })
 
+adminRouter.post('beer/image/change/:id', uploadCloud.single('photo'), (req, res, next) => {
+  console.log(req.params.id);
+  Beer.findById(req.params.id)
+  .then(beer => {
+    if(req.file !== undefined) {
+      const image = req.file.url;
+      beer.image = image;
+    }
+    console.log(beer);
+    res.render('/');
+  }).catch(e => {
+    console.log(`ERROR: ${e}`);
+  })
+})
+
+adminRouter.post('brewery/image/change/:id', uploadCloud.single('photo'), (req, res, next) => {
+  Beer.findById(req.params.id)
+  .then((err, beer) => {
+    console.log(beer);
+    if(beer !== undefined) {
+      console.log(`VAmos a cambaiarle la foto a ${beer.name}`);
+      res.render('/');
+    } else {
+      Brewery.findById(req.params.id).then((err, brewery) => {
+        console.log(`VAmos a cambaiarle la foto a ${brewery.name}`);
+        res.render('/');
+      })
+    }
+  })
+  .catch(err => {
+    console.log(err);
+    res.render('/');
+  })
+  
+/*   const image = req.file.url;
+  newBrewery.image = image; */
+})
+
 
 module.exports = adminRouter;

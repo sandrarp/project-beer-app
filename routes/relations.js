@@ -18,7 +18,7 @@ relationsRouter.get("/beers/rel/:id?", (req, res, next) => {
       console.log(`Ya existe esta relación, se borrará`);
       RelUserBeer.findOneAndDelete(rel._id, (err, next) => {
         console.log(`Relación eliminada`);
-        res.redirect("/profile");
+        res.redirect("back");
       })
       return;
     }
