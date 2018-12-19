@@ -11,12 +11,11 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
-
   {{> menu}}
   {{#if message }}
     <div class="error-message">{{ message }}</div>
   {{/if}}
-  <div class="container-fluid p-0">
+  <div class="main-container container-fluid {{page.title}}" style="max-width: 1200px; margin: 0 auto;">
   {{{body}}}
   </div>
   {{!-- Bootstrap --}}

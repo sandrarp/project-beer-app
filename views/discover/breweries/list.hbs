@@ -4,12 +4,14 @@
   {{#each breweries}}
   <div class="col-2">
     <a href="/discover/breweries/{{id}}">
-      <img src="{{image}}" alt="" width="200">
-      <h3>{{name}}</h3>
+      <img src="{{image}}" class="img-fluid img-thumbnail rounded-circle" alt="" width="200">
+      <h3 class="beer-title text-center">{{name}}</h3>
     </a>
-    <p>{{company}}</p>
-    <p>{{city}}, {{country}}</p>
-    <p>{{foundation_year}}</p>
+    <div class="cpt-content text-center">
+      {{!-- <p>{{company}}</p> --}}
+      <p>{{city}}, {{country}}</p>
+      {{!-- <p>{{foundation_year}}</p> --}}
+    </div>
   </div>
   {{/each}}
 </div>
