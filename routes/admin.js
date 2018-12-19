@@ -17,9 +17,11 @@ adminRouter.get("/add/beer", (req, res, next) => {
 
 adminRouter.post("/add/beer", uploadCloud.single('photo'), (req, res, next) => {
   const { name, brewery, vol, beertype, color, isSeasonal, isGlutenFree } = req.body; 
-  const image = req.file.url;
-  const newBeer = new Beer({ name, brewery, vol, beertype, color, isSeasonal, isGlutenFree, image });
-
+  const newBeer = new Beer({ name, brewery, vol, beertype, color, isSeasonal, isGlutenFree });
+  if(req.file !== undefined) {
+    const image = req.file.url;
+    newBeer.image = image;
+  }
   newBeer.save()
   .then(() => {
     res.redirect("/admin/add/beer");
@@ -40,8 +42,11 @@ adminRouter.get("/add/brewery", (req, res, next) => {
 
 adminRouter.post("/add/brewery", uploadCloud.single('photo'), (req, res, next) => {
   const { name, company, city, country, foundation_year } = req.body; 
-  const image = req.file.url;
-  const newBrewery = new Brewery({ name, company, city, country, foundation_year, image });
+  const newBrewery = new Brewery({ name, company, city, country, foundation_year });
+  if(req.file !== undefined) {
+    const image = req.file.url;
+    newBrewery.image = image;
+  }
 
   newBrewery.save()
   .then(() => {
