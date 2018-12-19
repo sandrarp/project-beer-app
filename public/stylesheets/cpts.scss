@@ -1,4 +1,4 @@
-.rel-button:not([data-rel=""]) {
+.rel-button.active {
  background: blue;
  color: white;
 }

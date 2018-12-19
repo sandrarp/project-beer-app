@@ -32,7 +32,8 @@ relationsRouter.get("/beers/rel/:id?", (req, res, next) => {
     newRel.save()
     .then(() => {
       console.log(`New relation created`);
-      res.redirect("/profile");
+      // res.render("/");
+      res.redirect('back');
     })
     .catch(err => {
       res.render('user/add-beer', { "message": req.flash("error") });

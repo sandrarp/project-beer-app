@@ -298,7 +298,7 @@
     outline: 0;
     box-shadow: none !important; }
 
-.rel-button:not([data-rel=""]) {
+.rel-button.active {
   background: blue;
   color: white; }
 
