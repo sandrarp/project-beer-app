@@ -10,17 +10,14 @@ cloudinary.config({
 
 var storage = cloudinaryStorage({
   cloudinary: cloudinary,
-  folder: 'breweries',
+  folder: 'birra-uploads',
   allowedFormats: ['jpg', 'png'],
   transformation: [{ width: 800, height: 800, crop: "limit" }],
-  // filename: function (req, file, cb) {
-  //   let imgName = undefined;
-  //   cb(undefined, imgName);
-  // },
+  // transformation: [{ width: 374, height: 912, crop: "limit" }],
   filename: function (req, file, cb) {
-    cb(undefined, 'my-file-name')
+    let imgName = undefined;
+    cb(undefined, imgName);
   }
-
 });
 
 const uploadCloud = multer({ storage: storage })

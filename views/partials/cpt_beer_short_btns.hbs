@@ -1,15 +1,15 @@
 {{#with beer}}
 <article class="card beer-card {{orientation}} border-0">
-  <div class="card-header text-center bg-white">  
+  <div class="card-header text-center bg-white pb-2">  
     <a href="/discover/beers/{{id}}">
       <img src="{{image}}" alt="" height="200">
     </a>
   </div>
-  <div class="card-body text-center">
+  <div class="card-body text-center pt-0">
     <p class="meta-brewery meta-text-c"><a href="/discover/breweries/{{brewery.id}}">{{brewery.name}}</a></p>
     {{!-- <p class="meta-brewery meta-text-c"><img src="{{brewery.image}}" height="15" alt=""> <a href="/discover/breweries/{{brewery.id}}">{{brewery.name}}</a></p> --}}
     <h1 class="beer-title">{{name}}</h1>
-    <p class="meta-beertype meta-text-a"><i>{{beertype}}</i></p>
+    <p class="meta-beertype meta-text-a {{color}}"><i>{{beertype}}</i></p>
   <p class="meta-vol meta-text-b">{{vol}}</p>
   </div>
   {{#if user}}

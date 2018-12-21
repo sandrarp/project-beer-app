@@ -1,44 +1,12 @@
-<h1 class="page-title">Hello, {{user.name}}</h1>
-<h2 class="page-subtitle">Estás son tus cervezas</h2>
+{{!-- <h1 class="page-title">Hola, {{user.name}}</h1> --}}
+<h2 class="page-title">Estás son tus cervezas</h2>
 <div class="row">
 {{#if rels}}
-  <div class="col-sm-6">
-    <div class="row">
-      <div class="col-sm">
-        <div class="row beer-row">
-          {{#each testeds}}
-          <div class="col-sm-2">
-            {{> cpt_rel}}
-          </div>
-          {{/each}}
-        </div>
-      </div>
+  {{#each rels}}
+    <div class="col-sm-2 p-0">
+      {{> cpt_rel}}
     </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="row">
-      <div class="col-sm">
-        <div class="row beer-row">
-          {{#each favs}}
-          <div class="col-sm-2">
-            {{> cpt_rel}}
-          </div>
-          {{/each}}
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm">
-        <div class="row beer-row">
-          {{#each pendants}}
-          <div class="col-sm-2">
-            {{> cpt_rel}}
-          </div>
-          {{/each}}
-        </div>
-      </div>
-    </div>
-  </div>
+  {{/each}}
 {{else}}
   <div class="col-sm">
     <p>Todavía no tienes cervezas, ¿por qué no pruebas a añadir alguna?</p>

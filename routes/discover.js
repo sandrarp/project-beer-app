@@ -58,7 +58,6 @@ discoveryRouter.get("/beers/:id", (req, res, next) => {
   .populate('brewery', 'name city country image')
   .then(beer => {
     res.render('discover/beers', {beer});
-    console.log(beers);
   })
 })
 

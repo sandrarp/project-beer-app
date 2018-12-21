@@ -1,8 +1,20 @@
-
+{{!-- 
 <article class="cpt_rel">
    <a href="/discover/beers/{{beer_id.id}}">
       <img src="{{beer_id.image}}" alt="" height="200">
       <h3 class="beer-title">{{beer_id.name}}</h3>
     </a>
   <p class="meta-info rel_type">{{rel_type}}</p>
+</article>
+ --}}
+<article class="card beer-card {{orientation}} border-0">
+  <div class="card-header text-center bg-white pb-2">  
+    <a href="/discover/beers/{{beer_id.id}}">
+      <img src="{{beer_id.image}}" alt="" height="200">
+    </a>
+  </div>
+  <div class="card-body text-center pt-0">
+    <h1 class="beer-title">{{beer_id.name}}</h1>
+    <p class="meta-beertype meta-text-a"><i>{{rel_type}}</i></p>
+  </div>
 </article>

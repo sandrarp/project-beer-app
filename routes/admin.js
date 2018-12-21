@@ -59,42 +59,42 @@ adminRouter.post("/add/brewery", uploadCloud.single('photo'), (req, res, next) =
   })
 })
 
-adminRouter.post('beer/image/change/:id', uploadCloud.single('photo'), (req, res, next) => {
+adminRouter.post('/beer/image/change/:id', uploadCloud.single('photo'), (req, res, next) => {
   console.log(req.params.id);
   Beer.findById(req.params.id)
   .then(beer => {
     if(req.file !== undefined) {
       const image = req.file.url;
       beer.image = image;
+      beer.save()
+      .then(() => {
+        res.redirect('back');
+      })
     }
-    console.log(beer);
-    res.render('/');
+    res.redirect('back');
   }).catch(e => {
     console.log(`ERROR: ${e}`);
+    res.redirect('back');
   })
 })
 
-adminRouter.post('brewery/image/change/:id', uploadCloud.single('photo'), (req, res, next) => {
-  Beer.findById(req.params.id)
-  .then((err, beer) => {
-    console.log(beer);
-    if(beer !== undefined) {
-      console.log(`VAmos a cambaiarle la foto a ${beer.name}`);
-      res.render('/');
-    } else {
-      Brewery.findById(req.params.id).then((err, brewery) => {
-        console.log(`VAmos a cambaiarle la foto a ${brewery.name}`);
-        res.render('/');
+adminRouter.post('/brewery/image/change/:id', uploadCloud.single('photo'), (req, res, next) => {
+  Brewery.findById(req.params.id)
+  .then(brewery => {
+    if(req.file !== undefined) {
+      const image = req.file.url;
+      brewery.image = image;
+      brewery.save()
+      .then(() => {
+        res.redirect('back');
       })
+    } else {
+      res.redirect('back');
     }
+  }).catch(e => {
+    console.log(`ERROR: ${e}`);
+    res.redirect('back');
   })
-  .catch(err => {
-    console.log(err);
-    res.render('/');
-  })
-  
-/*   const image = req.file.url;
-  newBrewery.image = image; */
 })
 
 

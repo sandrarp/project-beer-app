@@ -11,12 +11,22 @@ body {
   font: 14px 'Avenir Next W01', Helvetica, Arial, sans-serif;
 }
 
+body {
+  /* background-image: url(../images/bg-orange.png);
+  background-repeat: repeat-y; */
+}
+
 a {
   color: $birra-black;
   &:hover {
     color: #000;
   }
 }
+
+.Tostada {color: $birra-dark-brown;}
+.Rubia {color: $birra-orange;}
+.Negra {color: $birra-dark-grey;}
+.Roja {color: $birra-red;}
 
 
 .bg-birra-primary {

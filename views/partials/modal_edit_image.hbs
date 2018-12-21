@@ -9,7 +9,7 @@
       </div>
       <div class="modal-body">
         <img src="{{this.image}}" alt="" width="200">
-        <form action="/admin/beer/image/change/{{this.id}}" method="post" enctype="multipart/form-data">
+        <form action="/admin/{{type}}/image/change/{{this.id}}" method="post" enctype="multipart/form-data">
             <input type="file" name="photo" class="mt-4">
             <input type="submit" class="btn btn-primary btn-block mt-5" value="SAVE">
         </form>
