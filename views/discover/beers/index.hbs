@@ -2,7 +2,7 @@
 <div class="PAGE-BREADCRUMB"><a href="/discover">Descubre</a> / <a href="/discover/beers">Cervezas</a> / {{name}}</div>
 <div class="row container-centered single">
   <div class="col-12 col-sm-3">
-    <img src="{{image}}" alt="" width="200">
+    <img src="{{image}}" alt="" height="500">
     <a href="#" class="btn btn-light" data-toggle="modal" data-target="#uploadImage">
       Añadir/Editar imagen
     </a>
@@ -41,7 +41,7 @@
       </div>
       <div class="modal-body">
         <img src="{{image}}" alt="" width="200">
-        <form action="/admin/beer/image/change/{{id}}" method="post" enctype="multipart/form-data">
+        <form action="/admin/beer/image/change/{{beer.id}}" method="post" enctype="multipart/form-data">
             <input type="file" name="photo" class="mt-4">
             <input type="submit" class="btn btn-primary btn-block mt-5" value="SAVE">
         </form>
