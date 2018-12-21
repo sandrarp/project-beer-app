@@ -436,6 +436,11 @@ a {
   .menu-user-avatar img {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); }
+    top: 50%;
+    transform: translate(-50%, -50%); }
+
+.nav-links li {
+  font-weight: 500;
+  text-transform: uppercase; }
 
 /*# sourceMappingURL=style.css.map */

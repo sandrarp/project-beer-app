@@ -14,18 +14,21 @@
     <p class="page-title title-2 mb-3">{{vol}}</p>
     <p class="title-3">{{beertype}}</p>
     <p>{{kcal}}</p>
+    <div class="">
+          <a href="/discover/breweries/{{brewery.id}}">
+          <img src="{{brewery.image}}" width="50" alt="" class="mb-2">
+          <p>{{brewery.name}}</p>
+        </a>
+    </div>
     <div class="meta-brewery">
-      <p>Una cerveza de:</p>
-      <a href="/discover/breweries/{{brewery.id}}">
-        <img src="{{brewery.image}}" width="50" alt="">
-        <p>{{brewery.name}}</p>
-        <p>{{brewery.city}}, {{brewery.country}}</p>
-      </a>
+      <p>{{brewery.city}}, {{brewery.country}}</p>
     </div>
     <p>{{description}}</p>
     <div class="badges">
-      {{#if isGlutenFree}}<img src="/images/icons/glutenFree.png">{{/if}}
-      {{#if isSeasonal}}<img src="/images/icons/seasonal.png">{{/if}}
+      <ul class="list-inline d-flex">
+        {{#if isGlutenFree}}<li class="list-inline-item"><img src="/images/icons/glutenFree.png"></li>{{/if}}
+        {{#if isSeasonal}}<li class="list-inline-item"><img src="/images/icons/seasonal.png"></li>{{/if}}
+      </ul>
     </div>
   </div>
   {{/with}}

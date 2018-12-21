@@ -1,11 +1,11 @@
-<nav class="navbar navbar-light navbar-expand-md p-4">
+<nav class="navbar navbar-light navbar-expand-md py-2 px-4">
   <a class="navbar-brand" href="/">
     <img src="/images/logo_birra_sm.png" height="25" class="d-inline-block align-top" alt="">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
   <ul class="nav-links m-0">
     <li class="list-inline-item"><a href="/admin/add/beer">Añadir cerveza</a></li>
     <li class="list-inline-item"><a href="/discover">Descubre!</a></li>
@@ -13,11 +13,22 @@
     <li class="list-inline-item"><a href=""></a></li>
   </ul>
   {{#if user}}
-    <div class="nav-user">
-      <span>{{user.name}}</span>
-      <a href="/profile/edit" class="menu-user-avatar rounded-circle"><img src="{{user.image}}" alt="" height="30"></a>
-      <a href="/logout">Cerrar sesión</a>
+  <ul class="nav-links m-0">
+    <li class="nav-item dropdown list-group-item">
+    <a href="#" class="menu-user-avatar rounded-circle nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>{{user.name}}</span> <img src="{{user.image}}" alt="" height="30"></a>
+    <div class="dropdown-menu dropdown-menu-right">
+      <a class="dropdown-item" href="#">Perfil</a>
+      <a class="dropdown-item" href="/profile/edit">Editar perfil</a>
+      {{#if admin}}
+      <a class="dropdown-item"><small class="text-warning"><i class="fas fa-star"></i>  Eres admin! </small></a>
+      {{else}}
+      <a class="dropdown-item" href="#"><small class="text-warning"><i class="fas fa-star"></i> Hazte amdin</small></a>
+      {{/if}}
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="/logout">Cerrar sesión</a>
     </div>
+  </li>
+  </ul>
   {{/if}}
   </div>
   
