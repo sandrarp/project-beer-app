@@ -4,7 +4,12 @@
   <div class="card-group">
     {{#each beers}}
       <div class="col-2 p-0">
-        {{> cpt_beer_short_btns}}
+        <article class="card beer-card border-0">
+          {{> cpt_beer_short_btns}}
+          {{#if ../user}}
+            {{> rel_btns}}
+          {{/if}}
+        </article>
       </div>
     {{/each}}
   </div>

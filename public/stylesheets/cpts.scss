@@ -1,8 +1,3 @@
-.rel-button.active {
- background: blue;
- color: white;
-}
-
 .beer-row {
   border-bottom: 3px solid $birra-dark-grey;
 }
@@ -44,6 +39,9 @@
     .card-header {
       border-bottom: 3px solid #000;
     }
+    .card-footer {
+      background: none;
+    }
   }
 
 .title-2 {
@@ -52,6 +50,24 @@
 .title-3 {
   font-size: 33px;
   font-weight: 500;
+}
+
+.btn-status {
+  border-radius: 200%;
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  &:hover {
+    background-color: $birra-dark-grey;
+  }
+  img {
+    width: 50%;
+  }
 }
 
 

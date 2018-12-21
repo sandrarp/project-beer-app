@@ -6,8 +6,12 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
-  <ul class="nav-links m-0">
-    <li class="list-inline-item"><a href="/admin/add/beer">Añadir cerveza</a></li>
+  <ul class="nav-links m-0 flex-fill text-center text-uppercase">
+    {{#if user}}
+      {{#if admin}}
+        <li class="list-inline-item"><a href="/admin/add/beer">Añadir cerveza</a></li>
+      {{/if}}
+    {{/if}}
     <li class="list-inline-item"><a href="/discover">Descubre!</a></li>
     <li class="list-inline-item"><a href=""></a></li>
     <li class="list-inline-item"><a href=""></a></li>

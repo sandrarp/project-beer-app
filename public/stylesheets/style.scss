@@ -29,12 +29,12 @@ a {
 .Roja {color: $birra-red;}
 
 
-.bg-birra-primary {
-  background-color: $birra-primary;
-}
-.bg-birra-white {
-  background-color: $birra-ecru-white;
-}
+.bg-birra-primary {background-color: $birra-primary;}
+.bg-birra-white {background-color: $birra-ecru-white;}
+.bg-birra-green {background-color: $birra-green;}
+.bg-birra-medium-grey {background-color: $birra-medium-grey;}
+.bg-birra-red {background-color: $birra-red;}
+.bg-birra-blue {background-color: $birra-blue;}
 
 .page-title {
   font-size: 3.928em;
@@ -96,5 +96,5 @@ a {
 }
 .nav-links li {
   font-weight: 500;
-  text-transform: uppercase;
+  
 }

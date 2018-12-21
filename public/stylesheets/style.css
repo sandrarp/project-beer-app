@@ -325,10 +325,6 @@ body {
     bottom: 0;
     left: 0; } }
 
-.rel-button.active {
-  background: blue;
-  color: white; }
-
 .beer-row {
   border-bottom: 3px solid #4A4A4A; }
 
@@ -355,12 +351,30 @@ article h1, .beer-title {
 .beer-card .card-header {
   border-bottom: 3px solid #000; }
 
+.beer-card .card-footer {
+  background: none; }
+
 .title-2 {
   font-size: 50px; }
 
 .title-3 {
   font-size: 33px;
   font-weight: 500; }
+
+.btn-status {
+  border-radius: 200%;
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none; }
+  .btn-status:hover {
+    background-color: #4A4A4A; }
+  .btn-status img {
+    width: 50%; }
 
 body {
   color: #4A4A4A;
@@ -385,13 +399,25 @@ a {
   color: #4A4A4A; }
 
 .Roja {
-  color: #D25A2F; }
+  color: #EE5656; }
 
 .bg-birra-primary {
   background-color: #F5A623; }
 
 .bg-birra-white {
   background-color: #F7F7EB; }
+
+.bg-birra-green {
+  background-color: #3BE393; }
+
+.bg-birra-medium-grey {
+  background-color: #DCDCDC; }
+
+.bg-birra-red {
+  background-color: #EE5656; }
+
+.bg-birra-blue {
+  background-color: #4A90E2; }
 
 .page-title, .quote-container .quote-title {
   font-size: 3.928em;
@@ -440,7 +466,6 @@ a {
     transform: translate(-50%, -50%); }
 
 .nav-links li {
-  font-weight: 500;
-  text-transform: uppercase; }
+  font-weight: 500; }
 
 /*# sourceMappingURL=style.css.map */
