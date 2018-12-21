@@ -79,6 +79,10 @@ require('./passport')(app);
 
 app.use((req, res, next) => {
   res.locals.user = req.user;
+  if(req.user !== undefined && req.user.usertype === "admin") {
+    res.locals.admin = true;
+    console.log(res.locals.admin);
+  }
   next();
 })
 

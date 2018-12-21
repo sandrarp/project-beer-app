@@ -2,9 +2,29 @@ const express = require("express");
 const adminRouter = express.Router();
 const Brewery = require('../models/Brewery');
 const Beer = require('../models/Beer');
+const User = require('../models/User');
 const _ = require("lodash");
 const uploadCloud = require('../config/cloudinary');
 
+
+adminRouter.get("/usertype/admin", (req, res, next) => {
+  if(req.user !== undefined) {
+    let user_id = req.user.id;
+    User.findById(user_id)
+    .then(user => {
+      user.usertype = "admin";
+      user.save()
+      .then(() => {
+        res.redirect('back');
+        console.log(`Ahora eres ${user.usertype}`);
+      })
+      .catch(err => {
+        res.redirect('back');
+        console.log(`Algo fue mal cambiando el tipo de usuario`);
+      })
+    })
+  }
+})
 
 adminRouter.get("/add/beer", (req, res, next) => {
   Brewery.find().sort({name: 1})

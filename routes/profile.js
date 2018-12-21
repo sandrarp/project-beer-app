@@ -2,7 +2,9 @@ const express = require("express");
 const profileRouter = express.Router();
 const RelUserBeer = require("../models/RelUserBeer");
 const Beer = require("../models/Beer");
+const User = require("../models/User");
 const _ = require("lodash");
+const uploadCloud = require('../config/cloudinary');
 
 profileRouter.get('/', (req, res, next) => {
   if(req.user === null || req.user === undefined) {
@@ -26,7 +28,30 @@ profileRouter.get('/', (req, res, next) => {
 })
 
 profileRouter.get('/edit', (req, res, next) => {
-  res.render('user/profile', { "message": req.flash("error") });
+  res.render('user/edit-profile', { "message": req.flash("error") });
+})
+
+profileRouter.post('/edit/image', uploadCloud.single('photo'), (req, res, next) => {
+  User.findById(req.user.id)
+  .then(user => {
+    if(req.file !== undefined) {
+      console.log(user);
+      const image = req.file.url;
+      console.log(user.image);
+      user.image = image;
+      console.log(user.image);
+      user.save()
+      .then(() => {
+        res.redirect('/profile/edit');
+      })
+    } else {
+      console.log(user);
+      res.redirect('/profile/edit');
+    }
+  }).catch(e => {
+    console.log(`ERROR: ${e}`);
+    res.redirect('back');
+  })
 })
 
 profileRouter.get('/beers', (req, res, next) => {

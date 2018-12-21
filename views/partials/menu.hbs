@@ -1,8 +1,12 @@
-<nav class="navbar navbar-light">
+<nav class="navbar navbar-light navbar-expand-md p-4">
   <a class="navbar-brand" href="/">
     <img src="/images/logo_birra_sm.png" height="25" class="d-inline-block align-top" alt="">
   </a>
-  <ul class="nav-links">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="nav-links m-0">
     <li class="list-inline-item"><a href="/admin/add/beer">Añadir cerveza</a></li>
     <li class="list-inline-item"><a href="/discover">Descubre!</a></li>
     <li class="list-inline-item"><a href=""></a></li>
@@ -11,9 +15,10 @@
   {{#if user}}
     <div class="nav-user">
       <span>{{user.name}}</span>
-      <a href=""><img src="{{user.image}}" alt="" height="30"></a>
+      <a href="/profile/edit" class="menu-user-avatar rounded-circle"><img src="{{user.image}}" alt="" height="30"></a>
       <a href="/logout">Cerrar sesión</a>
     </div>
   {{/if}}
+  </div>
   
 </nav>

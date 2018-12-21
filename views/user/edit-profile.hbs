@@ -1,35 +1,32 @@
-{{#with beer}}
-<div class="PAGE-BREADCRUMB"><a href="/discover">Descubre</a> / <a href="/discover/beers">Cervezas</a> / {{name}}</div>
-<div class="row container-centered single">
+{{#with user}}
+<h1 class="page-title title-1">Edita tu perfil</h1>
+<div class="row single">
   <div class="col-12 col-sm-3">
-    <img src="{{image}}" alt="" height="500">
-    {{#if ../admin}}
-    <a href="#" class="btn btn-light" data-toggle="modal" data-target="#uploadImage">
-      Añadir/Editar imagen
-    </a>
-    {{/if}}
-  </div>
-  <div class="col">
-    <h1 class="page-title title-2 mb-3">{{name}}</h1>
-    <p class="page-title title-2 mb-3">{{vol}}</p>
-    <p class="title-3">{{beertype}}</p>
-    <p>{{kcal}}</p>
-    <div class="meta-brewery">
-      <p>Una cerveza de:</p>
-      <a href="/discover/breweries/{{brewery.id}}">
-        <img src="{{brewery.image}}" width="50" alt="">
-        <p>{{brewery.name}}</p>
-        <p>{{brewery.city}}, {{brewery.country}}</p>
+    <div class="text-center" style="width: fit-content;">
+      <div class="profile-image rounded-circle mb-4" style="background-image: url({{image}});" ></div>
+      <a href="#" class="btn btn-light" data-toggle="modal" data-target="#uploadImage">
+        Añadir/Editar imagen
       </a>
     </div>
-    <p>{{description}}</p>
+  </div>
+  <div class="col">
+    <h1 class=" title-3 mb-3">{{name}}</h1>
+    <h4 class="">{{username}}</h4>
+    <p class="title-4">{{email}}</p>
+    <p class=" mb-4">{{#if ../admin}}<span class="badge badge-info">Admin</span>{{/if}}</p>
+    <div class="meta-brewery mt-4">
+      <h4>Historial de birrer:</h4>
+      <p><b>Probadas:</b></p>
+      <p><b>Favoritas:</b></p>
+      <p><b>Pendientes:</b></p>
+    </div>
     <div class="badges">
       {{#if isGlutenFree}}<img src="/images/icons/glutenFree.png">{{/if}}
       {{#if isSeasonal}}<img src="/images/icons/seasonal.png">{{/if}}
     </div>
   </div>
-  {{/with}}
 </div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="uploadImage" tabindex="-1" role="dialog" aria-labelledby="uploadImageLabel" aria-hidden="true">
@@ -43,7 +40,7 @@
       </div>
       <div class="modal-body">
         <img src="{{image}}" alt="" width="200">
-        <form action="/admin/beer/image/change/{{beer.id}}" method="post" enctype="multipart/form-data">
+        <form action="/profile/edit/image" method="post" enctype="multipart/form-data">
             <input type="file" name="photo" class="mt-4">
             <input type="submit" class="btn btn-primary btn-block mt-5" value="SAVE">
         </form>
@@ -51,3 +48,4 @@
     </div>
   </div>
 </div>
+{{/with}}

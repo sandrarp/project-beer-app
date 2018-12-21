@@ -69,3 +69,27 @@ a {
     color: $birra-light-grey;
   }
 }
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+}
+
+
+// ---------- MENU --------------- 
+.menu-user-avatar {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

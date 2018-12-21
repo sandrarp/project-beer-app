@@ -19,3 +19,12 @@
     box-shadow: none!important;
   }
 }
+
+@media(max-width: 767px) {
+  .accordion.forms-container {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+}

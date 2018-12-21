@@ -318,6 +318,13 @@ body {
     outline: 0;
     box-shadow: none !important; }
 
+@media (max-width: 767px) {
+  .accordion.forms-container {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0; } }
+
 .rel-button.active {
   background: blue;
   color: white; }
@@ -411,5 +418,24 @@ a {
 
 .quote-container .quote-expression {
   color: #8A8A8A; }
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center center; }
+
+.menu-user-avatar {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle; }
+  .menu-user-avatar img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
 
 /*# sourceMappingURL=style.css.map */

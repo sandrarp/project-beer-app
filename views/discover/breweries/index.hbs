@@ -3,10 +3,12 @@
 <h1 class="page-title">{{name}}</h1>
 <div class="row">
   <div class="col-12 col-sm-3">
-    <img src="{{image}}" alt="" width="200">
-    <a href="#" class="btn btn-light" data-toggle="modal" data-target="#uploadImage">
-      Añadir/Editar imagen
-    </a>
+    <div class="text-center" style="width: fit-content;">
+      <div class="profile-image rounded-circle mb-4" style="background-image: url({{image}});" ></div>
+      <a href="#" class="btn btn-light" data-toggle="modal" data-target="#uploadImage">
+        Añadir/Editar imagen
+      </a>
+    </div>
   </div>
   <div class="col-12 col-sm-5">
     <h3>{{name}}</h3>
@@ -21,6 +23,7 @@
         <li><a href="/discover/beers/{{id}}">{{name}}</a></li>
         {{/each}}
       </ul>
+      <a href="/admin/add/beer" class="btn btn-dark bg-birra-primary border-0">Añadir cerveza</a>
     </div>
   </div>
 </div>
