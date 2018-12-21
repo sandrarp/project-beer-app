@@ -2,7 +2,7 @@
 <div class="page-breadcrumb"><a href="/discover">Descubre</a> / <a href="/discover/breweries">Fábricas</a> / {{name}}</div>
 <h1 class="page-title">{{name}}</h1>
 <div class="row">
-  <div class="col-12 col-sm-3">
+  <div class="col-12 col-sm-3 text-center text-sm-left">
     <div class="text-center" style="width: fit-content;">
       <div class="profile-image rounded-circle mb-4" style="background-image: url({{image}});" ></div>
       <a href="#" class="btn btn-light" data-toggle="modal" data-target="#uploadImage">
@@ -18,9 +18,9 @@
     <div class="brewery-beers">
       <h2>Cervezas de {{name}}:</h2>
       {{/with}}
-      <ul>
+      <ul class="p-0">
         {{#each beers}}
-        <li><a href="/discover/beers/{{id}}">{{name}}</a></li>
+        <li class="list-inline-item text-center col-2 col-sm-3 m-0"><a href="/discover/beers/{{id}}" class="text-center"><img src="{{image}}" height="150" alt=""><p>{{name}}</p></a></li>
         {{/each}}
       </ul>
       <a href="/admin/add/beer" class="btn btn-dark bg-birra-primary border-0">Añadir cerveza</a>
