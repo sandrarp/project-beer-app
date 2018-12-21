@@ -4,10 +4,9 @@
       <img src="{{image}}" alt="" height="200">
     </a>
   </div>
-  <div class="card-body text-center pt-0">
-    <p class="meta-brewery meta-text-c"><a href="/discover/breweries/{{brewery.id}}">{{brewery.name}}</a></p>
+  <div class="card-body text-center">
     <h1 class="beer-title">{{name}}</h1>
+    <p class="meta-brewery meta-text-c"><a href="/discover/breweries/{{brewery.id}}">{{brewery.name}}</a></p>
     <p class="meta-beertype meta-text-a {{color}}"><i>{{beertype}}</i></p>
   <p class="meta-vol meta-text-b">{{vol}}</p>
-  </div>
   {{/with}}

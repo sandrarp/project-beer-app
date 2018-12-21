@@ -15,7 +15,7 @@ adminRouter.get("/usertype/admin", (req, res, next) => {
       user.usertype = "admin";
       user.save()
       .then(() => {
-        res.redirect('back');
+        res.redirect('/profile/edit');
         console.log(`Ahora eres ${user.usertype}`);
       })
       .catch(err => {
