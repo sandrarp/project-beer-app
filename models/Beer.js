@@ -4,7 +4,7 @@ const Schema   = mongoose.Schema;
 const beerSchema = new Schema({
   name: String,
   description: String,
-  image: {type: String, default: 'https://res.cloudinary.com/duaxyo2ks/image/upload/v1544729477/beers/beer.jpg'},
+  image: {type: String, default: 'http://res.cloudinary.com/duaxyo2ks/image/upload/v1545411400/birra-uploads/urbktmwh9eiv0ir00q9f.jpg'},
   brewery: {type: Schema.Types.ObjectId, ref:'Brewery'},
   vol: String,
   kcal: String,
